@@ -21,6 +21,11 @@ Before creat the final rgo CD _Application_, it is required to create the specif
 ```$bash
 oc apply -f argocd/ClusterRole.yaml
 oc apply -f argocd/ClusterRoleBinding.yaml
+oc apply -f argocd/ClusterRoleBinding.yaml
+
+** OR **
+
+oc adm policy add-cluster-role-to-user admin system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller
 ```
 
 Once the respective ClusterRole and ClusterRoleBinding are created, it is time to create the final Argo CD Application:
