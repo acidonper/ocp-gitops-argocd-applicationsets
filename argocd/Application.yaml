@@ -11,4 +11,7 @@ spec:
     path: '.'
   destination:
     server: https://kubernetes.default.svc
-    namespace: 'default'
+    namespace: 'openshift-gitops'
+  syncPolicy:
+    automated:
+      prune: true
