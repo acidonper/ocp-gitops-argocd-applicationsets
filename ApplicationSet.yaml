@@ -5,7 +5,7 @@ metadata:
 spec:
   generators:
   - git:
-      repoURL: https://github.com/acidonpe/ocp-gitops-argocd-applicationsets.git
+      repoURL: https://github.com/acidonper/ocp-gitops-argocd-applicationsets.git
       revision: HEAD
       directories:
       - path: services/*
@@ -15,7 +15,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/acidonpe/ocp-gitops-argocd-applicationsets.git
+        repoURL: https://github.com/acidonper/ocp-gitops-argocd-applicationsets.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
