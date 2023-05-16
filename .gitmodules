@@ -1,0 +1,3 @@
+[submodule "services/jump-app-helm/charts"]
+	path = services/jump-app-helm/charts
+	url = https://github.com/acidonper/jump-app-helm-charts.git
