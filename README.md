@@ -23,7 +23,7 @@ oc apply -f argocd/ClusterRole.yaml
 oc apply -f argocd/ClusterRoleBinding.yaml
 oc apply -f argocd/ClusterRoleBinding.yaml
 
-** OR **
+** AND **
 
 oc adm policy add-cluster-role-to-user admin system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller
 ```
