@@ -1,0 +1,91 @@
+# back-golang variables
+global:
+  apps:
+    back-golang:
+      imagerepo: quay.io/acidonpe/jump-app-back-golang
+      imagetag: latest
+      multiVersions: 
+        enabled: false
+      replicas: 1
+      envVars:
+        APP_REF_NAME: jump-app
+      containerPorts:
+        http:
+          containerPort: 8442
+          protocol: TCP
+      servicePorts:
+        http-8442:
+          port: 8442
+          protocol: TCP
+          targetPort: 8442
+      public: true
+      routeTargetPort: http-8442
+      frontSettings:
+        var: REACT_APP_GOLANG
+        port: 8442
+    back-python:
+      imagerepo: quay.io/acidonpe/jump-app-back-python
+      imagetag: latest
+      multiVersions: 
+        enabled: false
+      replicas: 1
+      envVars:
+        APP_REF_NAME: jump-app
+      containerPorts:
+        http:
+          containerPort: 8080
+          protocol: TCP
+      servicePorts:
+        http-8444:
+          port: 8444
+          protocol: TCP
+          targetPort: 8080
+      public: false
+      routeTargetPort: http-8444
+      frontSettings:
+        var: REACT_APP_PYTHON
+        port: 8444
+    back-springboot:
+      imagerepo: quay.io/acidonpe/jump-app-back-springboot
+      imagetag: latest
+      multiVersions: 
+        enabled: false
+      replicas: 1
+      envVars:
+        APP_REF_NAME: jump-app
+      containerPorts:
+        https:
+          containerPort: 8443
+          protocol: TCP
+      servicePorts:
+        http-8443:
+          port: 8443
+          protocol: TCP
+          targetPort: 8443
+      public: false
+      routeTargetPort: http-8443
+      frontSettings:
+        var: REACT_APP_SPRINGBOOT
+        port: 8443
+    back-quarkus:
+      imagerepo: quay.io/acidonpe/jump-app-back-quarkus
+      imagetag: latest
+      multiVersions: 
+        enabled: false
+      replicas: 1
+      envVars:
+        APP_REF_NAME: jump-app
+      containerPorts:
+        http:
+          containerPort: 8080
+          protocol: TCP
+      servicePorts:
+        http-8445:
+          port: 8445
+          protocol: TCP
+          targetPort: 8080
+      public: false
+      routeTargetPort: http-8080
+      frontSettings:
+        var: REACT_APP_QUARKUS
+        port: 8445

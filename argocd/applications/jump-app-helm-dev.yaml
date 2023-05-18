@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jump-app-helm-dev
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/acidonper/ocp-gitops-argocd-applicationsets.git
+    targetRevision: HEAD
+    path: .
+    helm:
+      valueFiles:
+      - ./onboarding/jump-app-helm-dev/apps/back-golang/values.yaml
+      - ./onboarding/jump-app-helm-dev/apps/back-python/values.yaml
+      - ./onboarding/jump-app-helm-dev/apps/back-quarkus/values.yaml
+      - ./onboarding/jump-app-helm-dev/apps/back-springboot/values.yaml
+      - ./onboarding/jump-app-helm-dev/apps/front-javascript/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jump-app-helm-dev
+  syncPolicy:
+    automated:
+      prune: true

@@ -1,0 +1,23 @@
+# front-javascript variables
+global:
+  apps:
+    front-javascript:
+      imagerepo: quay.io/acidonpe/jump-app-front-javascript
+      imagetag: latest
+      multiVersions: 
+        enabled: false
+      replicas: 1
+      envVars:
+        APP_REF_NAME: jump-app
+      containerPorts:
+        http:
+          containerPort: 3000
+          protocol: TCP
+      servicePorts:
+        http-8080:
+          port: 8080
+          protocol: TCP
+          targetPort: 3000
+      public: true
+      routeTargetPort: http-8080
+      backend: back-golang

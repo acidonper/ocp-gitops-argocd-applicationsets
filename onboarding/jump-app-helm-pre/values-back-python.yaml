@@ -1,0 +1,25 @@
+# back-python variables
+global:
+  apps:
+    back-python:
+      imagerepo: quay.io/acidonpe/jump-app-back-python
+      imagetag: latest
+      multiVersions: 
+        enabled: false
+      replicas: 1
+      envVars:
+        APP_REF_NAME: jump-app
+      containerPorts:
+        http:
+          containerPort: 8080
+          protocol: TCP
+      servicePorts:
+        http-8444:
+          port: 8444
+          protocol: TCP
+          targetPort: 8080
+      public: false
+      routeTargetPort: http-8444
+      frontSettings:
+        var: REACT_APP_PYTHON
+        port: 8444

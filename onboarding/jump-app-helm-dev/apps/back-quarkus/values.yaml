@@ -1,0 +1,25 @@
+# back-quarkus variables
+global:
+  apps:
+    back-quarkus:
+      imagerepo: quay.io/acidonpe/jump-app-back-quarkus
+      imagetag: latest
+      multiVersions: 
+        enabled: false
+      replicas: 1
+      envVars:
+        APP_REF_NAME: jump-app
+      containerPorts:
+        http:
+          containerPort: 8080
+          protocol: TCP
+      servicePorts:
+        http-8445:
+          port: 8445
+          protocol: TCP
+          targetPort: 8080
+      public: false
+      routeTargetPort: http-8080
+      frontSettings:
+        var: REACT_APP_QUARKUS
+        port: 8445

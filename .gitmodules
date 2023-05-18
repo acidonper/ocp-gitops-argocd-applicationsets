@@ -1,3 +1,15 @@
-[submodule "services/jump-app-helm/charts"]
-	path = services/jump-app-helm/charts
+[submodule "services/jump-app-helm-pre/charts"]
+	path = services/jump-app-helm-pre/charts
+	url = https://github.com/acidonper/jump-app-helm-charts.git
+
+[submodule "services/jump-app-helm-dev/charts"]
+	path = services/jump-app-helm-dev/charts
+	url = https://github.com/acidonper/jump-app-helm-charts.git
+
+[submodule "onboarding/jump-app-helm-pre/charts"]
+	path = onboarding/jump-app-helm-pre/charts
+	url = https://github.com/acidonper/jump-app-helm-charts.git
+
+[submodule "onboarding/jump-app-helm-dev/charts"]
+	path = onboarding/jump-app-helm-dev/charts
 	url = https://github.com/acidonper/jump-app-helm-charts.git

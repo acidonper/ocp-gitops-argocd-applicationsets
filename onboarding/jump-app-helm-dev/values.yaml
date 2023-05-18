@@ -1,0 +1,28 @@
+##
+# Jump App Microservices Chart values
+#
+# DEV environment
+#
+##
+
+# Subcharts status
+jump-app-cicd:
+  enabled: false
+jump-app-argocd:
+  enabled: false
+jump-app-ocp-bootstrap:
+  enabled: false
+jump-app-micros:
+  enabled: true
+  istio:
+    enabled: false
+    namespace: istio-system
+    mtls: true
+  knative:
+    enabled: false
+  cicd:
+    namespace: jump-app-cicd
+  
+# Global variables
+global:
+  appsDomain: apps.acidonpe34.sandbox766.opentlc.com

@@ -1,0 +1,25 @@
+# back-springboot variables
+global:
+  apps:
+    back-springboot:
+      imagerepo: quay.io/acidonpe/jump-app-back-springboot
+      imagetag: latest
+      multiVersions: 
+        enabled: false
+      replicas: 1
+      envVars:
+        APP_REF_NAME: jump-app
+      containerPorts:
+        https:
+          containerPort: 8443
+          protocol: TCP
+      servicePorts:
+        http-8443:
+          port: 8443
+          protocol: TCP
+          targetPort: 8443
+      public: false
+      routeTargetPort: http-8443
+      frontSettings:
+        var: REACT_APP_SPRINGBOOT
+        port: 8443
